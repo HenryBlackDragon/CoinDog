@@ -12,25 +12,43 @@
   <description>Demo project for Spring Boot + React</description>
 
   <modules>
-    <module>spring-boot</module>
+    <module>web-app</module>
     <module>react-app</module>
   </modules>
 
   <properties>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <spring.boot.starter>2.5.4</spring.boot.starter>
+    <frontend.maven.plugin.version>1.12.0</frontend.maven.plugin.version>
     <frontend.directory>react-app</frontend.directory>
+    <node.version>v12.13.1</node.version>
   </properties>
 
-  <build>
-    <plugins>
-      <plugin>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <version>2.5.4</version>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-    </plugins>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring.boot.starter}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.github.eirslett</groupId>
+          <artifactId>frontend-maven-plugin</artifactId>
+          <version>${frontend.maven.plugin.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 
 </project>
