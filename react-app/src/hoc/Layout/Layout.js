@@ -18,7 +18,6 @@ const getWalletData = async setWalletState => {
 const saveWalletData = async walletState => {
     await axios.post('/wallet', walletState)
         .then(resp => {
-           console.log(resp);
         })
         .catch(err => {
             console.error(err);
