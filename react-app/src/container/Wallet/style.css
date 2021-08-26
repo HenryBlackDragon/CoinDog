@@ -1,0 +1,11 @@
+.wallet {
+    display: grid;
+    grid-template-columns: repeat(2, 0.3fr);
+    grid-row-gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.wallet > div {
+    margin-right: 10px;
+}

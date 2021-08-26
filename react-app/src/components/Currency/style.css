@@ -1,0 +1,32 @@
+.currency {
+    height: 200px;
+    border: 1px solid #eee;
+    border-radius: 5px;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    box-shadow: 0 2px 2px #ccc;
+  }
+  
+  .currency-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .currency > div {
+    padding: 10px;
+  }
+  
+  img {
+    margin-right: 10px;
+  }
+
+  .currency-value, .currency-in-usd {
+      margin-right: 5px;
+  }
+
+  .currency-name {
+    font-size: 1.3rem;
+  }
