@@ -1,12 +1,12 @@
-package com.example.alex.coindog;
+package com.example.alex.coindog.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class TestController {
+public class MainController {
 
-  @GetMapping("/")
+  @GetMapping
   public String getMainPage() {
     return "index";
   }

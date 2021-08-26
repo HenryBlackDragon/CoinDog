@@ -1,0 +1,35 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet author="Alex" id="create-coin-account-table">
+    <preConditions onFail="MARK_RAN">
+      <not>
+        <tableExists tableName="coin_account"/>
+      </not>
+    </preConditions>
+    <createTable tableName="coin_account">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false" unique="true"/>
+      </column>
+      <column name="doge_coin" type="BIGINT"/>
+      <column name="btc_coin" type="BIGINT"/>
+      <column name="eth_coin" type="BIGINT"/>
+      <column name="ltc_coin" type="BIGINT"/>
+      <column name="cash" type="BIGINT"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet author="Alex" id="insert-first-data">
+    <insert tableName="coin_account">
+      <column name="id" value="1"/>
+      <column name="doge_coin" value="100"/>
+      <column name="btc_coin" value="1"/>
+      <column name="eth_coin" value="6"/>
+      <column name="ltc_coin" value="23"/>
+      <column name="cash" value="100000"/>
+    </insert>
+  </changeSet>
+
+</databaseChangeLog>
