@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../../context';
 
+import Button from '../Button';
 import './style.css';
 
-const Currency = ({ curName, curShortName, imgSrc, curValue }) => {
-    const coinCount = Math.floor(Math.random() * 10);
-    const coinValue = (coinCount * curValue).toFixed(2);
+const Currency = ({ curName, curShortName, imgSrc, coins, curValue }) => {
+    const coinValue = (coins * curValue).toFixed(2);
+    const { updateWallet } = useContext(Context);
 
     return (
         <div className="currency">
@@ -13,7 +15,7 @@ const Currency = ({ curName, curShortName, imgSrc, curValue }) => {
                 <div className="currency-name">{curName}</div>
             </div>
             <div>
-                <span className="currency-value">{coinCount}</span>
+                <span className="currency-value">{coins}</span>
                 <span>{curShortName}</span>
             </div>
             <div>
@@ -21,6 +23,7 @@ const Currency = ({ curName, curShortName, imgSrc, curValue }) => {
                 <span className="currency-in-usd">{coinValue}</span>
                 <span>USD</span>
             </div>
+            <Button curShortName={curShortName} onClickHandler={() => updateWallet(curValue, curShortName)} />
         </div>
     )
 }

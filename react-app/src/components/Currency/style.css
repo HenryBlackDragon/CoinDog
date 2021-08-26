@@ -8,6 +8,7 @@
     justify-content: center;
     font-family: sans-serif;
     box-shadow: 0 2px 2px #ccc;
+    position: relative;
   }
   
   .currency-header {

@@ -1,6 +1,6 @@
 .wallet {
     display: grid;
-    grid-template-columns: repeat(2, 0.3fr);
+    grid-template-columns: repeat(2, 400px);
     grid-row-gap: 15px;
     justify-content: center;
     margin-top: 30px;

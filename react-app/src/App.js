@@ -1,11 +1,7 @@
-import Toolbar from './components/Navigation/Toolbar';
-import Wallet from './container/Wallet';
+import Layout from './hoc/Layout/Layout';
 
 const App = () => (
-  <>
-    <Toolbar />
-    <Wallet />
-  </>
+  <Layout />
 );
 
 export default App;

@@ -4,15 +4,12 @@ import './style.css';
 
 import Logo from '../../Logo';
 
-const Toolbar = () => (
+const Toolbar = ({ walletCash }) => (
     <header>
         <div className="logo-container">
             <Logo />
         </div>
-        <nav className="">
-            {/* <NavigationItems isAuthenticated={props.isAuth} /> */}
-            {/* <NavigationItems /> */}
-        </nav>
+        <div className="cash"><span>$</span>{walletCash.toFixed(2)}</div>
     </header>
 );
 

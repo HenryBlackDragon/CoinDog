@@ -1,8 +1,20 @@
 header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: indianred;
+    color: white;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
+}
+
+.cash {
+    margin-right: 40px;
+}
+
+.cash > span {
+    margin-right: 2px;
 }
